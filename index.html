@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="wrapper">
+      <nav>
+        <div class="content">
+          <div class="logo"><a href="#">user</a></div>
+          <ul class="links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/displayUser.html">User</a></li>
+
+            <!-- <li>
+                <a href="#" class="desktop-link">Features</a>
+                <label for="show-features">Features</label>
+                <ul>
+                    <li><a href="#">User Type 1</a></li>
+                    <li><a href="#">User Type  2</a></li>
+                    <li><a href="#">User Type  3</a></li>
+                </ul>
+              </li> -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+  </header>
+  <h2>User Information</h2>
+  <div class="form-container user-container">
+    <form id="userForm" data-id="">
+      <h1>User Information</h1>
+      <input type="text" id="uname" placeholder="Username" />
+      <input type="text" id="email" placeholder="Email" />
+      <input type="text" id="pass" placeholder="Password" />
+      <select id="userType" required>
+        <option value="admin">Admin</option>
+        <option value="seller">seller</option>
+        <option value="user">User</option>
+      </select>
+      <button type="button" id="adduser">Add</button>
+      <button type="button" id="updateuser" style="display: none">Update User</button>
+    </form>
+
+
+
+  </div>
+
+
+  <script type="module" src="./index.js"></script>
+
+</body>
+
+</html>

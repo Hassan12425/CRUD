@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="display.css">
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+        <nav>
+          <div class="content">
+          <div class="logo"><a href="#">user</a></div>
+            <ul class="links">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/displayUser.html">User</a></li>
+
+            </ul>
+          </div>
+          <!-- Search Bar -->
+          <div class="search-bar" >
+            <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="searchFun()">
+          </div>
+        </nav>
+      </div>
+    
+</header>
+    <h1>Firestore Data</h1>
+    <table id="data-table">
+      <thead>
+          <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>User Type</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody></tbody>
+  </table>
+        
+  <script>
+    function searchFun() {
+      let filter = document.getElementById('searchInput').value.toUpperCase();
+      let myTable = document.getElementById('data-table');
+      let tr = myTable.getElementsByTagName('tr');
+      for (var i = 0; i < tr.length; i++) {
+          let td = tr[i].getElementsByTagName('td')[0];
+          if (td) {
+              let textvalue = td.textContent || td.innerHTML;
+              if (textvalue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+              } else {
+                  tr[i].style.display = "none";
+              }
+          }
+      }
+  }
+  </script>
+    <script type="module" src="displaydata.js"></script>
+</body>
+</html>
